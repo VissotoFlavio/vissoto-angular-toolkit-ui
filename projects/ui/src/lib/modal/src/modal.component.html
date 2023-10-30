@@ -1,0 +1,11 @@
+<div class="modal fade" [ngClass]="{'show': show}">
+    <label class="modal-backdrop" for="modal-1" (click)="clickBackdrop()"></label>
+    <div class="modal-dialog position-{{config.position}} modal-{{config.showType}} modal-size-{{config.size}}">
+        <div class="modal-content vat-bg-color-{{config.color}} vat-border-radius-{{config.rounded}}">
+            <label class="modal__close" for="modal-1"></label>
+            <div>
+                <ng-container *ngTemplateOutlet="config.templateRef"></ng-container>
+            </div>
+        </div>
+    </div>
+</div>

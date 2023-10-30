@@ -1,0 +1,13 @@
+<div *ngIf="itens && itens.length > 0" class="vat-tab">
+  <div class="vat-tab-container" [style.max-width]="maxWidthTab" [style.width]="widthTab">
+      <ul class="vat-tab-container-list">
+          <li *ngFor="let item of itens" class="vat-tab-container-list-item" [attr.data-id-tab]="item.id"
+              [ngClass]="{'disabled': item.disabled, 'selected': item.selected}">
+              <a (click)="click(item)" class="vat-tab-container-list-item-label">
+                  <img *ngIf="item.img" [src]="item.img.src" [alt]="item.img.alt" [width]="item.img.width" [height]="item.img.height" class="{{item.img.cssClass}}">
+                  {{item.text}}
+              </a>
+          </li>
+      </ul>
+  </div>
+</div>

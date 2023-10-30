@@ -1,0 +1,23 @@
+@import './../../../assets/scss/reset.scss';
+@import './../../../assets/scss/colors.scss';
+@import './../../../assets/scss/media-query.scss';
+@import './../../../assets/scss/border.scss';
+@import './../../../assets/scss/font.scss';
+
+
+:host {
+  .vat {
+    &-input-text-label {
+      display: block;
+      @extend .vat-font-size-sm;
+      @extend .vat-font-medium;
+      color: color(gray-900);
+    }
+    &-input-text {
+      border: 1px solid color(gray-300);
+      color: color(gray-900);
+      width: 100%;
+      padding: 0.625rem;
+    }
+  }
+}

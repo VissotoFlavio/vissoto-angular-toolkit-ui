@@ -1,0 +1,78 @@
+<div>
+    <label *ngIf="label" for="vat_input_text_{{ id }}" class="vat-input-text-label">{{label}}</label>
+    <input [type]="type" id="vat_input_text_{{ id }}"
+        *ngIf="control"
+        class="vat-input-text vat-font-size-{{fontSize}} vat-border-radius-{{rounded}}"
+
+        [formControl]="control"
+    
+        [attr.placeholder]="placeholder" 
+        [attr.required]="required ? '' : null"
+        [attr.readonly]="readonly ? '' : null"
+        [attr.max]="max ? '' : null"
+        [attr.maxlength]="maxlength ? '' : null"
+        [attr.min]="min ? '' : null"
+        [attr.minlength]="minlength ? '' : null"
+        [attr.name]="name ? '' : null"
+        
+        (blur)="byBlur.emit($event)"
+        (change)="byChange.emit($event)"
+        (contextmenu)="byContextMenu.emit($event )"
+        (focus)="byFocus.emit($event )"
+        (input)="byInput.emit(parseInputEvent($event))"
+        (select)="bySelect.emit($event )"
+        
+        (keydown)="byKeyDown.emit($event)"
+        (keypress)="byKeyPress.emit($event)"
+        (keyup)="byKeyUp.emit($event)"
+        
+        (click)="byClick.emit(parsePointerEvent($event))"
+        (dblclick)="byDblClick.emit($event)"
+        (mousedown)="byMouseDown.emit($event)"
+        (mousemove)="byMouseMove.emit($event)"
+        (mouseout)="byMouseOut.emit($event)"
+        (mouseover)="byMouseOver.emit($event)"
+        (mouseup)="byMouseUp.emit($event)"
+        (wheel)="byWheel.emit($event)"
+        
+        (copy)="byCopy.emit($event)"
+        (cut)="byCut.emit($event)"
+        (paste)="byPaste.emit($event)">
+    
+    <input [type]="type" id="vat_input_text_{{ id }}"
+        *ngIf="!control"
+        class="vat-input-text vat-font-size-{{fontSize}} vat-border-radius-{{rounded}}"
+
+        [attr.placeholder]="placeholder" 
+        [attr.required]="required ? '' : null"
+        [attr.readonly]="readonly ? '' : null"
+        [attr.max]="max ? '' : null"
+        [attr.maxlength]="maxlength ? '' : null"
+        [attr.min]="min ? '' : null"
+        [attr.minlength]="minlength ? '' : null"
+        [attr.name]="name ? '' : null"
+        
+        (blur)="byBlur.emit($event)"
+        (change)="byChange.emit($event)"
+        (contextmenu)="byContextMenu.emit($event )"
+        (focus)="byFocus.emit($event )"
+        (input)="byInput.emit(parseInputEvent($event))"
+        (select)="bySelect.emit($event )"
+        
+        (keydown)="byKeyDown.emit($event)"
+        (keypress)="byKeyPress.emit($event)"
+        (keyup)="byKeyUp.emit($event)"
+        
+        (click)="byClick.emit(parsePointerEvent($event))"
+        (dblclick)="byDblClick.emit($event)"
+        (mousedown)="byMouseDown.emit($event)"
+        (mousemove)="byMouseMove.emit($event)"
+        (mouseout)="byMouseOut.emit($event)"
+        (mouseover)="byMouseOver.emit($event)"
+        (mouseup)="byMouseUp.emit($event)"
+        (wheel)="byWheel.emit($event)"
+        
+        (copy)="byCopy.emit($event)"
+        (cut)="byCut.emit($event)"
+        (paste)="byPaste.emit($event)">
+</div>

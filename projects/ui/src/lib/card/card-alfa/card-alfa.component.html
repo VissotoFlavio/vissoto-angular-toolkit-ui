@@ -1,0 +1,21 @@
+<div class="cards-alfa-wrapper cursor-pointer" *ngIf="card">
+  <a
+    (click)="clickCard()"
+    class="card flex items-end bg-cover bg-center h-72 shadow-md transition relative overflow-hidden border-2 border-solid border-gray-400 no-underline text-white rounded-md p-4"
+    style="--bg-img: url({{ card.imageSrc != null ? card.imageSrc : '' }});">
+    <div>
+      <h1 class="m-0 text-2xl">{{ card.title }}</h1>
+      <p class="text-xs my-2">{{ card.message }}</p>
+      <div class="absolute top-0 right-0 text-sm p-4 opacity-80">
+        {{ card.date }}
+      </div>
+      <div class="tags flex">
+        <div
+          *ngFor="let tag of card.tags"
+          class="tag text-xs flex items-center bg-white/50 rounded-md px-2 py-1 mr-2 hover:underline">
+          {{ tag.name }}
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

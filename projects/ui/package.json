@@ -1,0 +1,24 @@
+{
+  "name": "@vissoto-angular/ui",
+  "version": "12.6.4",
+  "description": "Componentes Angular para utilização na UI.",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlavioVissoto/vissoto-angular-toolkit-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlavioVissoto/vissoto-angular-toolkit-ui/issues"
+  },
+  "homepage": "https://github.com/FlavioVissoto/vissoto-angular-toolkit-ui#readme",
+  "schematics": "./src/schematics/collection.json",
+  "peerDependencies": {
+    "@angular/common": "^12.2.0",
+    "@angular/core": "^12.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

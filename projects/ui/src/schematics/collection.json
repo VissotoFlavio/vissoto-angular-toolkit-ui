@@ -1,0 +1,15 @@
+{
+  "$schema": "./../../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Add Vissoto Angular Toolkit UI to the application.",
+      "factory": "./ng-add/index#ngAdd",
+      "schema": "./ng-add/schema.json"
+    },
+    "ng-add-mdb-setup": {
+      "description": "Setup Vissoto Angular Toolkit UI.",
+      "factory": "./ng-add/vat-setup",
+      "schema": "./ng-add/schema.json"
+    }
+  }
+}

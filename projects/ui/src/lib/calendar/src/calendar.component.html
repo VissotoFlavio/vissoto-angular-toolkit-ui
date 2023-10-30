@@ -1,0 +1,49 @@
+<p>calendar works!</p>
+<div ngClass="calendar" [class]="theme">
+    <div class="header">
+        <h3>{{daysWeek[currentDayWeek].name}} {{currentDay}}</h3>
+        <h3 class="year-month">
+            <span (click)="openSelectMonth()">{{months[currentMonth].name}}</span>
+            <span (click)="openSelectYear()">{{currentYear}}</span>
+        </h3>
+    </div>
+    <div class="body-days" [ngClass]="{'show': showSelectDays}">
+        <ul class="days">
+            <li *ngFor="let item of daysWeek">{{item.shortname}}</li>
+        </ul>
+        <ul class="dates">
+            <li *ngFor="let item of renderDates"
+                (click)="item.prev || item.next ? changeMonth(item) : selectDate(item)">
+                <div class="text"
+                    [ngClass]="{'active': item.active, 'selected': item.selected, 'next': item.next, 'prev': item.prev, 'today': item.isToday, 'notification': item.notification}">
+                    {{item.text}}
+                    <span *ngIf="item.notification" class="notification-text"
+                        [ngClass]="{'small': !item.countNotifications}">{{item.countNotifications}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="body-months" [ngClass]="{'show': showSelectMonth}">
+        <ul class="months">
+            <li *ngFor="let item of months"
+                [ngClass]="{'disabled': item.disabled, 'selected': item.index == currentMonth}"
+                (click)="!item.disabled ? selectedMonth(item) : null">
+                {{item.name}}</li>
+        </ul>
+    </div>
+    <div class="body-year" [ngClass]="{'show': showSelectYear}">
+        <h1>Selecione o ano</h1>
+        <ul class="years">
+            <li *ngFor="let item of yearList" (click)="selectedYear(item)">{{item}}</li>
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="hours">
+            <p>{{currentHours}}</p>
+        </div>
+        <div class="add" [ngClass]="{'show': showSelectDays, 'disabled': disabledPlusButton}"
+            (click)="!disabledPlusButton ? clickPlusButton() : null">
+            <p>+</p>
+        </div>
+    </div>
+</div>

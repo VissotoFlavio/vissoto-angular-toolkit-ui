@@ -1,0 +1,13 @@
+<div class="vat-checkbox">
+        <div class="vat-checkbox-container">
+                <input *ngIf="control" id="vat-chb-{{id}}" type="checkbox"
+                        class="vat-checkbox-container item vat-border-radius-rounded" [formControl]="control">
+                <input *ngIf="!control" id="vat-chb-{{id}}" type="checkbox"
+                        class="vat-checkbox-container item vat-border-radius-rounded" [checked]="checked"
+                        [disabled]="disabled" (change)="changeCheckbox($event)">
+        </div>
+        <div class="label">
+                <label for="vat-chb-{{id}}">{{text}}</label>
+                <p *ngIf="helperText" id="vat-chb-helper-{{id}}" class="helper">{{helperText}}</p>
+        </div>
+</div>
